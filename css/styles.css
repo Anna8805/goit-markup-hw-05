@@ -274,14 +274,15 @@ img {
     width: 30px;
     height: 30px;
     background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
     cursor: pointer;
 }
 
 .button-close-svg {
-    width: 18px;
-    height: 18px;
+    width: 30px;
+    height: 30px;
 }
-
 /* =============== END HERO =============== */
 
 /* =============== FEATURES =============== */
