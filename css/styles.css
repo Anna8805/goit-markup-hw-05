@@ -59,6 +59,62 @@ img {
     margin: 0 auto;
     align-items: center;
 }
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 250ms linear;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: all 250ms linear 250ms;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 250ms linear 0ms;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 528px;
+    height: 581px; 
+    background-color: #fff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: all 250ms linear 250ms;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.button-close-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+}
 /* =============== END COMPONENTS =============== */
 
 /* =============== HEADER =============== */
@@ -119,6 +175,7 @@ img {
     line-height: 1.143;
     letter-spacing: 0.02em;
     color: var(--the-text-color-of-subtitle);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .header-contacts-link {
@@ -129,12 +186,12 @@ img {
     line-height: 1.143;
     letter-spacing: 0.02em;
     color: var(--main-text-color);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-contacts-link:hover .icon-envelope,
 .header-contacts-link:focus .icon-envelope {
     fill: var(--accent-color);
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-envelope {
@@ -142,12 +199,12 @@ img {
     height: 12px;
     margin-right: 10px;
     fill: #757575;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .header-contacts-link:hover .icon-smartphone,
 .header-contacts-link:focus .icon-smartphone {
     fill: var(--accent-color);
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .icon-smartphone {
@@ -155,6 +212,7 @@ img {
     height: 16px;
     margin-right: 10px;
     fill: #757575;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .navigation-list-link:hover,
@@ -162,7 +220,6 @@ img {
 .header-contacts-link:hover,
 .header-contacts-link:focus {
     color: var(--accent-color);
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .navigation-list-link-color {
@@ -238,50 +295,7 @@ img {
     letter-spacing: 0.06em;
     color: #fff;
     background: var(--accent-color);
-    transform: scale(1.25);
-}
-
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 528px;
-    height: 581px; 
-    background-color: #fff;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-}
-
-.close-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 30px;
-    height: 30px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.button-close-svg {
-    width: 30px;
-    height: 30px;
+    /* transform: scale(1.25); */
 }
 /* =============== END HERO =============== */
 
@@ -296,6 +310,7 @@ img {
 }
 
 .list-item {
+    align-self: center;
     width: 270px;
     height: 251px;
 }
@@ -389,24 +404,24 @@ img {
     height: 44px;
     border-radius: 50%;
     background-color: #fff;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .social-list-link-light:hover,
 .social-list-link-light:focus {
     background-color: var(--accent-color);
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .social-list-link-light:hover .social-list-svg-light,
 .social-list-link-light:focus .social-list-svg-light {
     fill: #fff;
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .social-list-svg-light {
     width: 20px;
     height: 20px;
     fill: var(--color-svg);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .team-section {
@@ -468,24 +483,24 @@ img {
     height: 90px;
     border: 1px solid #afb1b8;
     border-radius: 4px;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .customers-item-link:hover,
 .customers-item-link:focus {
     border: 1px solid  #2196F3 ;
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .customers-item-link:hover .logo-list-svg,
 .customers-item-link:focus .logo-list-svg {
     fill: var(--accent-color);
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .logo-list-svg {
     width: 89px;
     height: 46px;
     fill: var(--color-svg);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 /* =============== END CUSTOMERS =============== */
@@ -499,7 +514,7 @@ img {
 
 .footer .container {
     display: flex;
-    align-items: flex-start;
+    align-items: baseline;
 }
 
 .footer-list {
@@ -562,12 +577,12 @@ img {
     height: 44px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list-link-dark:hover,
 .social-list-link-dark:focus {
     background-color: var(--accent-color);
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .social-list-svg-dark {
@@ -586,27 +601,28 @@ img {
     margin-right: 8px;
 }
 
+
 .portfolio-model-btn {
     display: inline-block;
-    padding: 6px 22px;
     text-align: center;
-    border: 1px solid #eee;
+    padding: 6px 22px;
+    border: 1px solid transparent;
     border-radius: 4px;
     background-color: var(--background-section);
-    text-align: center;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.625;
     letter-spacing: 0.03em;
     color: var(--the-text-color-of-subtitle);
     cursor: pointer;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-model-btn:hover,
 .portfolio-model-btn:focus {
-    color: #FFF;
+    color: #fff;
     background: var(--accent-color);
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-list {
@@ -636,24 +652,23 @@ img {
     box-sizing: border-box;
     align-items: center;
     background: #fff;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .gallery-portfolio-img-wrapper {
     position: relative;
 }
 
-.gallery-portfolio-item:hover .overlay-technocrat,
-.gallery-portfolio-item:focus .overlay-technocrat {
+.gallery-portfolio-item:hover .overlay,
+.gallery-portfolio-item:focus .overlay {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .gallery-portfolio-item:hover,
 .gallery-portfolio-item:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .gallery-portfolio-item:nth-last-child(-n + 3) {
@@ -669,7 +684,7 @@ img {
     overflow: hidden;
 }
 
-.overlay-technocrat {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -686,11 +701,11 @@ img {
     visibility: hidden;
     pointer-events: none; 
     transform: translateY(100%);
-    transition: all 250ms linear; 
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 
 }
 
-.gallery-portfolio-item:hover .overlay-technocrat,
-.gallery-portfolio-item:focus .overlay-technocrat {
+.gallery-portfolio-item:hover .overlay,
+.gallery-portfolio-item:focus .overlay {
     transform: translateY(0%);
     transition: all 250ms linear; 
 }
@@ -708,6 +723,7 @@ img {
     line-height: 2;
     letter-spacing: 0.06em;
     color: var(--the-text-color-of-subtitle);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .gallery-portfolio-subtitle {
